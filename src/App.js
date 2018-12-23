@@ -5,15 +5,30 @@ import { connect } from 'react-redux';
 import { doTest } from './redux/actions';
 
 class App extends Component {
+  constructor(props) {
+      super(props)
+      this.state = {
+        color: 'black',
+        banner: 'hello',
+        isOpen: false,
+      };
+      this.buttonHandler = this.buttonHandler.bind(this)
+  }
+
+  buttonHandler(){
+    console.log('my button is working')
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            Hello Jonathan
           </p>
-          <h2>413 Starter Kit </h2>
+          <h2>{this.state.banner}</h2>
+            <button onCick={this.buttonHandler} Click Me></button>button>
         </header>
       </div>
     );
